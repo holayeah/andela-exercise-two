@@ -1,5 +1,5 @@
 import unittest
-from primes import prime_numbers
+from primes import prime_numbers, is_prime
 
 class PrimeTestCase(unittest.TestCase):
 
@@ -19,7 +19,15 @@ class PrimeTestCase(unittest.TestCase):
         self.assertRaises(TypeError):
             prime_numbers("string")
 
+    def test_list_is_not_greater_than_n(self):
+        list_returned = prime_numbers(100)
+        self.assertTrue(len(list_returned) < 100)
 
+    
+    def test_each_element_is_prime(self):
+        list_returned = prime_numbers(100)
+        for number in list_returned:
+            self.assertTrue(is_prime(number))
 
 if __name__ == '__main__'
     unittest.main()
