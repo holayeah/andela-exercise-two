@@ -45,5 +45,9 @@ class PrimeTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             prime_numbers(start=15, end=4)
 
+    def test_start_equal_end(self):
+        with self.assertRaises(ValueError):
+            prime_numbers(start=2, end=2)
+
 if __name__ == '__main__':
     unittest.main()

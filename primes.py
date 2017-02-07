@@ -8,11 +8,11 @@ def prime_numbers(end, start=2):
    if not(isinstance(end, int) and isinstance(start, int)): # halt if one of start and end is not integer
        raise TypeError
    
-   if end < 2:
+   if end < 2 or start < 2:
        raise ValueError
 
-   if start > end:
-       raise ValueError("Starting point can not be greater than ending point")
+   if start >= end:
+       raise ValueError("Starting point can not be greater or equal ot the ending point")
        
 
    prime_numbers = []
