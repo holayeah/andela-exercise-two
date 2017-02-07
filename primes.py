@@ -5,6 +5,12 @@ def prime_numbers(n):
    A function that returns prime numbers in range
    0 to n
    """
+   if not isinstance(n, int):
+       raise TypeError
+   
+   if n < 2:
+       raise ValueError
+
    prime_numbers = []
    for num in range(2, n):
        if is_prime(num):
