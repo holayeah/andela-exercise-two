@@ -37,5 +37,13 @@ class PrimeTestCase(unittest.TestCase):
         list_returned = prime_numbers(1000)
         self.assertEqual(len(list_returned), 168)
 
+    def test_prime_numbers_in_range(self):
+        list_returned = prime_numbers(start=10, end=15)
+        self.assertEqual(list_returned, [11, 13])
+
+    def test_invalid_range(self):
+        with self.assertRaises(ValueError):
+            prime_numbers(start=15, end=4)
+
 if __name__ == '__main__':
     unittest.main()

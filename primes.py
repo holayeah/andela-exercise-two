@@ -1,18 +1,22 @@
 
 
-def prime_numbers(n):
+def prime_numbers(end, start=2):
    """
    A function that returns prime numbers in range
-   0 to n
+   start and end
    """
-   if not isinstance(n, int):
+   if not(isinstance(end, int) and isinstance(start, int)): # halt if one of start and end is not integer
        raise TypeError
    
-   if n < 2:
+   if end < 2:
        raise ValueError
 
+   if start > end:
+       raise ValueError("Starting point can not be greater than ending point")
+       
+
    prime_numbers = []
-   for num in range(2, n):
+   for num in range(start, end):
        if is_prime(num):
            prime_numbers.append(num)
   
