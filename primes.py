@@ -32,3 +32,14 @@ def is_prime(num):
            return False
 
    return True
+
+
+"""
+Asymptotic analysis,
+Basing tat the prime_numbes function checks for every value in the range 
+and that the function in is_prime number checks that n can not be divible by any number less than it.
+
+We can say that for a number n it takes approximately n^2 operation to get the result.
+
+The result is that prime_numbers is (0)n^2
+"""
